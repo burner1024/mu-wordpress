@@ -9,16 +9,16 @@ environments:
     #### Name of EC2 keypair to associate with ECS container instances.
     #### Launches bastion host if defined.
     #### (default: none)
-    keyName: mu-wordpress
+    keyName: i-kp2
 
     #### The instance type to use for the ECS container instances
     #### (default: t2.micro)
-    instanceType: t2.micro
+    instanceType: t3a.nano
 
 - name: prod
   cluster:
-    keyName: mu-wordpress
-    instanceType: t2.small
+    keyName: i-kp2
+    instanceType: t3a.nano
 
 ## See https://github.com/stelligent/mu/wiki/Services
 service:
@@ -33,7 +33,7 @@ service:
   ### The endpoint inside the container to determine if the task is healthy
   ### The default isn't going to be valid under WordPress
   ### (default: /health)
-  healthEndpoint: /robots.txt
+  healthEndpoint: /
 
   ### The port to expose from the container
   ### (default: 8080)
@@ -82,7 +82,7 @@ service:
 
       #### The GitHub repo slug or CodeCommit repo name to build
       #### (default: none)
-      repo: stelligent/mu-wordpress
+      repo: burner1024/mu-wordpress
 
     acceptance:
       #### The environment name to deploy to for testing
