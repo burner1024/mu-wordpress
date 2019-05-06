@@ -4,9 +4,9 @@
 ## See https://github.com/stelligent/mu/wiki/Environments
 environments:
 - name: test
-  provider: eks
+  provider: ecs-fargate
 - name: prod
-  provider: eks
+  provider: ecs-fargate
 
 ## See https://github.com/stelligent/mu/wiki/Services
 service:
